@@ -6,7 +6,7 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/excitingtools-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/excitingtools-{{ version }}.tar.gz
   sha256: 29a4fa39f414a03e0dcb5e24bccde9528b402689c9a8876f17d24e003af51e77
 
 build:
