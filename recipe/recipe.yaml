@@ -1,0 +1,51 @@
+schema_version: 1
+
+context:
+  version: 1.9.0
+  python_min: '3.10'
+
+package:
+  name: excitingtools
+  version: ${{ version }}
+
+source:
+  url: https://pypi.org/packages/source/e/excitingtools/excitingtools-${{ version }}.tar.gz
+  sha256: 24e17811d44bf830c396b872a76e373534c9499f8098aeaeb98d6e0a4aa9d76f
+
+build:
+  number: 0
+  noarch: python
+  script: ${{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
+
+requirements:
+  host:
+    - python ${{ python_min }}.*
+    - setuptools >=65.5.0
+    - wheel
+    - setuptools-scm >=7.1.0
+    - pip
+  run:
+    - python >=${{ python_min }}
+    - numpy >=1.20.0
+    - matplotlib-base >=2.2.0
+    - importlib-metadata >=6.0
+
+tests:
+  - python:
+      imports:
+        - excitingtools
+      pip_check: true
+      python_version:
+        - ${{ python_min }}.*
+        - "*"
+
+about:
+  summary: Utilities for aiding in the construction of exciting inputs and the postprocessing exciting outputs.
+  license: LGPL-3.0-only
+  license_file: COPYING.LESSER
+  homepage: https://github.com/exciting/excitingtools
+
+extra:
+  recipe-maintainers:
+    - AlexBuccheri
+    - jan-janssen
