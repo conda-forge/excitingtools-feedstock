@@ -1,7 +1,7 @@
 schema_version: 1
 
 context:
-  version: 1.9.0
+  version: 2.0.0
   python_min: '3.10'
 
 package:
@@ -10,7 +10,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/e/excitingtools/excitingtools-${{ version }}.tar.gz
-  sha256: 24e17811d44bf830c396b872a76e373534c9499f8098aeaeb98d6e0a4aa9d76f
+  sha256: 3669f2e31da022d45b04f5b9f4397ecbfd8f7c1fefeb7e7f08ac1a9b026eaa04
 
 build:
   number: 0
@@ -28,8 +28,7 @@ requirements:
     - python >=${{ python_min }}
     - numpy >=1.20.0
     - matplotlib-base >=2.2.0
-    - importlib-metadata >=6.0
-
+    - typing_extensions
 tests:
   - python:
       imports:
@@ -37,7 +36,7 @@ tests:
       pip_check: true
       python_version:
         - ${{ python_min }}.*
-        - "*"
+        - '*'
 
 about:
   summary: Utilities for aiding in the construction of exciting inputs and the postprocessing exciting outputs.
